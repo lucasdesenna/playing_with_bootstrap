@@ -1,0 +1,183 @@
+//
+// List groups
+// --------------------------------------------------
+
+
+// Base class
+//
+// Easily usable on <ul>, <ol>, or <div>.
+
+.scroll-group {
+  // No need to set list-style: none; since .scroll-group-item is block level
+  font-size: 14px;
+  margin-bottom: 20px;
+  padding-left: 0; // reset padding because ul and ol
+  border: @scroll-group-border solid thin;
+  .border-top-radius(@scroll-group-border-radius);
+  .border-bottom-radius(@scroll-group-border-radius);
+  background-color: @scroll-group-bg;
+  overflow-y: hidden;
+
+  .scroll-group-heading {
+    display: block;
+    color: @scroll-group-heading-color;
+    text-align: center;
+    padding: @scroll-group-heading-padding;
+    background: @scroll-group-heading-bg;
+
+    &:first-child {
+      .border-top-radius(@scroll-group-border-radius);
+    }
+  }
+}
+
+// Individual list items
+//
+// Use on `li`s or `div`s within the `.scroll-group` parent.
+
+.scroll-group-item {
+  position: relative;
+  display: block;
+  padding: 10px 15px 9px 0;
+  // Place the border on the list items and negative margin up for better styling
+  margin-left: 8px;
+  background-color: @scroll-group-bg;
+  border-bottom: @scroll-group-border solid thin;
+  .clearfix();
+
+  &:last-child {
+    padding-bottom: 10px;
+    border-bottom: none;
+  }
+
+  & > * {
+    float: left;
+  }
+
+  img {
+    width: 47px;
+    height: 47px;
+    border: 0;
+    border-radius: 24px;
+    outline: none;
+    margin: 6px 0;
+    .get-image("parlour_thumb.png");
+  }
+
+  img+div {
+    padding-left: 16px;
+
+    * {
+      display: block;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+
+  .rating {
+    padding-top: 2px;
+    & > * {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      .get-image("icon_rating_empty.png");
+    }
+
+    .full {
+      .get-image("icon_rating_full.png");
+    }
+  }
+}
+
+
+// Interactive list items
+//
+// Use anchor or button elements instead of `li`s or `div`s to create interactive items.
+// Includes an extra `.active` modifier class for showing selected items.
+
+a.scroll-group-item,
+button.scroll-group-item {
+  color: @scroll-group-link-color;
+
+  .scroll-group-item-heading {
+    color: @scroll-group-link-heading-color;
+  }
+
+  // Hover state
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: @scroll-group-link-hover-color;
+    background-color: @scroll-group-hover-bg;
+  }
+}
+
+button.scroll-group-item {
+  width: 100%;
+  text-align: left;
+}
+
+.scroll-group-item {
+  // Disabled state
+  &.disabled,
+  &.disabled:hover,
+  &.disabled:focus {
+    background-color: @scroll-group-disabled-bg;
+    color: @scroll-group-disabled-color;
+    cursor: @cursor-disabled;
+
+    // Force color to inherit for custom content
+    .scroll-group-item-heading {
+      color: inherit;
+    }
+    .scroll-group-item-text {
+      color: @scroll-group-disabled-text-color;
+    }
+  }
+
+  // Active class on item itself, not parent
+  &.active,
+  &.active:hover,
+  &.active:focus {
+    z-index: 2; // Place active items above their siblings for proper border styling
+    color: @scroll-group-active-color;
+    background-color: @scroll-group-active-bg;
+    border-color: @scroll-group-active-border;
+
+    // Force color to inherit for custom content
+    .scroll-group-item-heading,
+    .scroll-group-item-heading > small,
+    .scroll-group-item-heading > .small {
+      color: inherit;
+    }
+    .scroll-group-item-text {
+      color: @scroll-group-active-text-color;
+    }
+  }
+}
+
+
+// Contextual variants
+//
+// Add modifier classes to change text and background color on individual items.
+// Organizationally, this must come after the `:hover` states.
+
+//.scroll-group-item-variant(success; @state-success-bg; @state-success-text);
+//.scroll-group-item-variant(info; @state-info-bg; @state-info-text);
+//.scroll-group-item-variant(warning; @state-warning-bg; @state-warning-text);
+//.scroll-group-item-variant(danger; @state-danger-bg; @state-danger-text);
+
+
+// Custom content options
+//
+// Extra classes for creating well-formatted content within `.scroll-group-item`s.
+
+.scroll-group-item-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.scroll-group-item-text {
+  margin-bottom: 0;
+  line-height: 1.3;
+}

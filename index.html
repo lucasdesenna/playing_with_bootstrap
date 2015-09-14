@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>Ublz</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="dist/css/bootstrap.css" rel="stylesheet">
+    <link href="dist/css/bootstrap-theme.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,12 +20,14 @@
     <![endif]-->
   </head>
   <body class="container">
-    <header id="header" class="row">
-      <div class="logo big col-xs-12"></div>
+    <header>
+    <div class="col-xs-12">
+      <div class="logo big"></div>
       <a class="icon facebook"></a>
       <a class="icon twitter"></a>
+    </div>
     </header>
-    <main class="row">
+    <main>
       <section id="splash" class="col-xs-12">
         <h2>Cuidar do seu bem-estar nunca foi tão fácil.</h2>
         <h4>Seus salões, profissionais e serviços favoritos a um toque de distância.</h4>
@@ -61,15 +65,15 @@
       <section id="parlours" class="col-xs-12">
         <div class="wrapper">
           <h1>Temos os seus favoritos.</h1>
-          <form class="form-horizontal" action="index_submit" method="get" accept-charset="utf-8">
+          <form class="form-horizontal col-xs-offset-4 col-xs-4" action="index_submit" method="get" accept-charset="utf-8">
             <label for="parlour"></label>
             <input class="form-control" type="text" name="parlour" value="" placeholder="Salão">
             <label for="city"></label>
             <input class="form-control" type="text" name="city" value=""  placeholder="Cidade">
-            <ul class="parlour-list list-group">
-              <div>9999 salões encontrados</div>
-              <li class="list-group-item">
-                <img src="img/parlour_thumb.png" alt="salão">
+            <ul class="scroll-group">
+              <div class="scroll-group-heading">9999 salões encontrados</div>
+              <li class="scroll-group-item">
+                <img src="img/parlour_thumb.png">
                 <div>
                   <p>Salão Toniolo p/ Carecas</p>
                   <small>Rua dos Bobos 0 - Itaim Bibi</small>
@@ -77,8 +81,22 @@
                     <div class="full"></div>
                     <div class="full"></div>
                     <div class="full"></div>
-                    <div class="blank"></div>
-                    <div class="blank"></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+              </li>
+              <li class="scroll-group-item">
+                <img src="img/parlour_thumb.png">
+                <div>
+                  <p>Salão Toniolo p/ Carecas</p>
+                  <small>Rua dos Bobos 0 - Itaim Bibi</small>
+                  <div class="rating">
+                    <div class="full"></div>
+                    <div class="full"></div>
+                    <div class="full"></div>
+                    <div></div>
+                    <div></div>
                   </div>
                 </div>
               </li>
@@ -105,6 +123,7 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="dist/js/bootstrap.js"></script>
   </body>
 </html>

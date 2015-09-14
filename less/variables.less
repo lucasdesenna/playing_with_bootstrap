@@ -2,6 +2,10 @@
 // Variables
 // --------------------------------------------------
 
+//== Folder
+//
+
+@folder-img: "../../img/";
 
 //== Colors
 //
@@ -697,6 +701,42 @@
 @list-group-link-hover-color:   @list-group-link-color;
 @list-group-link-heading-color: #333;
 
+//== Scroll group
+//
+//##
+
+//** Background color on `.scroll-group-item`
+@scroll-group-bg:                 #fff;
+//** `.scroll-group-item` border color
+@scroll-group-border:             #ddd;
+//** List group border radius
+@scroll-group-border-radius:      @border-radius-base;
+
+@scroll-group-heading-bg: #e4e4e4;
+@scroll-group-heading-color: #808080;
+@scroll-group-heading-padding: 4px 16px;
+
+//** Background color of single list items on hover
+@scroll-group-hover-bg:           #f5f5f5;
+//** Text color of active list items
+@scroll-group-active-color:       @component-active-color;
+//** Background color of active list items
+@scroll-group-active-bg:          @component-active-bg;
+//** Border color of active list elements
+@scroll-group-active-border:      @scroll-group-active-bg;
+//** Text color for content within active list items
+@scroll-group-active-text-color:  lighten(@scroll-group-active-bg, 40%);
+
+//** Text color of disabled list items
+@scroll-group-disabled-color:      @gray-light;
+//** Background color of disabled list items
+@scroll-group-disabled-bg:         @gray-lighter;
+//** Text color for content within disabled list items
+@scroll-group-disabled-text-color: @scroll-group-disabled-color;
+
+@scroll-group-link-color:         #555;
+@scroll-group-link-hover-color:   @scroll-group-link-color;
+@scroll-group-link-heading-color: #333;
 
 //== Panels
 //
