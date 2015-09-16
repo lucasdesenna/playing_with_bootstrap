@@ -13,10 +13,18 @@ h1, h2, h3, h4, h5, h6,
   line-height: @headings-line-height;
   color: @headings-color;
 
+  &.light {
+    color: @headings-light-color;
+
+    small, .small {
+      color: @headings-light-color;
+    }
+  }
+
   small,
   .small {
     font-weight: normal;
-    line-height: 1;
+    line-height: 1.2;
     color: @headings-small-color;
   }
 }
@@ -29,6 +37,8 @@ h3, .h3 {
 
   small,
   .small {
+    display: block;
+    margin-top: 16px;
     font-size: 65%;
   }
 }

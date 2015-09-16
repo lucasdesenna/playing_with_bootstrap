@@ -104,23 +104,23 @@ fieldset[disabled] .btn-default.active {
   background-image: none;
 }
 .btn-primary {
-  background-image: -webkit-linear-gradient(top, #337ab7 0%, #265a88 100%);
-  background-image: -o-linear-gradient(top, #337ab7 0%, #265a88 100%);
-  background-image: linear-gradient(to bottom, #337ab7 0%, #265a88 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff265a88', GradientType=0);
+  background-image: -webkit-linear-gradient(top, #0c7eff 0%, #0061ce 100%);
+  background-image: -o-linear-gradient(top, #0c7eff 0%, #0061ce 100%);
+  background-image: linear-gradient(to bottom, #0c7eff 0%, #0061ce 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0c7eff', endColorstr='#ff0061ce', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   background-repeat: repeat-x;
-  border-color: #245580;
+  border-color: #005cc4;
 }
 .btn-primary:hover,
 .btn-primary:focus {
-  background-color: #265a88;
+  background-color: #0061ce;
   background-position: 0 -15px;
 }
 .btn-primary:active,
 .btn-primary.active {
-  background-color: #265a88;
-  border-color: #245580;
+  background-color: #0061ce;
+  border-color: #005cc4;
 }
 .btn-primary.disabled,
 .btn-primary[disabled],
@@ -140,7 +140,7 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #265a88;
+  background-color: #0061ce;
   background-image: none;
 }
 .btn-success {
@@ -554,20 +554,30 @@ fieldset[disabled] .btn-danger.active {
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 html,
-body,
-main {
+body {
+  position: absolute;
   width: 100%;
   height: 100%;
+}
+body {
+  background-color: #727075;
+  background-image: url("../../img/bg_splash.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: 30% 50%;
+  background-size: cover;
+  background-attachment: fixed;
 }
 header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 20;
   display: block;
   width: 100%;
   padding: 12px 16px;
-  background: rgba(255, 255, 255, 0.9);
+  background: white;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 }
 header:before,
 header:after {
@@ -583,39 +593,66 @@ header .logo {
 header .icon {
   float: right;
 }
-main {
+footer {
+  display: block;
+  width: 100%;
+  height: 64px;
+  padding: 12px 16px;
+  background: white;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+footer .logo {
   position: absolute;
-  top: 0;
-  left: 0;
+  left: 50%;
+  margin-left: -68px;
+}
+footer .btn-appstore {
+  position: absolute;
+  right: 50%;
+  margin-right: -108px;
 }
 main section {
-  height: 95%;
+  padding: 64px 0;
 }
-#splash {
+main section h1:first-child {
+  margin-bottom: 32px;
+}
+main section.dark {
+  background-repeat: repeat-x;
+  background-image: -webkit-linear-gradient(288deg, #252525, #404040);
+  background-image: -o-linear-gradient(288deg, #252525, #404040);
+  background-image: linear-gradient(288deg, #252525, #404040);
+}
+main section.ghastly {
+  background: rgba(255, 255, 255, 0.9);
+}
+main section:last-child {
+  padding-bottom: 128px;
+}
+.splash {
   height: 95%;
-  padding-top: 64px;
-  background-color: #727075;
-  background-image: url("../../img/bg_splash.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-position: right;
-  background-size: cover;
+  padding-top: 128px;
+}
+.splash h1:first-child {
+  margin-bottom: 32px;
+}
+.dark.form-group .form-control,
+.dark.form-group .input-group-addon,
+.dark.form-control {
+  color: white;
+  border: none;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 #features {
   background: #FFF;
-}
-#parlours {
-  background-repeat: repeat-x;
-  background-image: -webkit-linear-gradient(-72deg, #252525, #404040);
-  background-image: -o-linear-gradient(-72deg, #252525, #404040);
-  background-image: linear-gradient(-72deg, #252525, #404040);
 }
 .logo {
   display: block;
 }
 .logo.small {
   width: 54px;
-  height: 28px;
+  height: 36px;
   background-image: url("../../img/logo_small.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -641,6 +678,28 @@ main section {
 }
 .icon.twitter {
   background-image: url("../../img/icon_twitter.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.btn.btn-primary {
+  padding: 16px;
+  margin-top: 32px;
+}
+.btn.btn-appstore {
+  display: block;
+}
+.btn.btn-appstore.small {
+  width: 108px;
+  height: 36px;
+  background-image: url("../../img/appstore_small.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.btn.btn-appstore.big {
+  width: 180px;
+  height: 60px;
+  margin: auto;
+  background-image: url("../../img/appstore_big.png");
   background-repeat: no-repeat;
   background-position: center;
 }

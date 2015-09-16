@@ -19,105 +19,135 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body class="container">
+  <body>
     <header>
-    <div class="col-xs-12">
-      <div class="logo big"></div>
-      <a class="icon facebook"></a>
-      <a class="icon twitter"></a>
-    </div>
+      <div class="container">
+        <div class="logo big"></div>
+        <a class="icon facebook"></a>
+        <a class="icon twitter"></a>
+      </div>
     </header>
+    <div class="splash container">
+      <div class="row">
+        <h1 class="light col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-5">
+          Cuidar do seu bem-estar nunca foi tão fácil.
+          <small>Seus salões, profissionais e serviços favoritos a um toque de distância.</small>
+        </h1>
+      </div>
+      <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-5">
+        <a class="btn btn-appstore big" href=""></a>
+      </div>
+    </div>
     <main>
-      <section id="splash" class="col-xs-12">
-        <h2>Cuidar do seu bem-estar nunca foi tão fácil.</h2>
-        <h4>Seus salões, profissionais e serviços favoritos a um toque de distância.</h4>
-        <a class="btn btn-appstore" href=""></a>
+      <section id="features">
+        <div class="container">
+          <h1 class="text-center col-xs-12">Viva o Ublz.</h1>
+          <ul class="list-group col-xs-12">
+            <li id="schedule" class="list-group-item">
+              <div class="thumb">
+                <h4>Agendamento Descomplicado</h4>
+                <div class="right-arrow"></div>
+              </div>
+            </li>
+            <li id="professionals" class="list-group-item">
+              <div class="thumb">
+                <h4>Escolha os Melhores</h4>
+                <div class="right-arrow"></div>
+              </div>
+            </li>
+            <li id="reminders" class="list-group-item">
+              <div class="thumb">
+                <h4>Lembretes Automáticos</h4>
+                <div class="right-arrow"></div>
+              </div>
+            </li>
+            <li id="payment" class="list-group-item">
+              <div class="thumb">
+                <h4>Facilidade de Pagamento</h4>
+                <div class="right-arrow"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </section>
-      <section id="features" class="col-xs-12">
-        <h1>Viva o Ublz.</h1>
-        <ul class="list-group">
-          <li id="schedule" class="list-group-item">
-            <div class="thumb">
-              <h4>Agendamento Descomplicado</h4>
-              <div class="right-arrow"></div>
-            </div>
-          </li>
-          <li id="professionals" class="list-group-item">
-            <div class="thumb">
-              <h4>Escolha os Melhores</h4>
-              <div class="right-arrow"></div>
-            </div>
-          </li>
-          <li id="reminders" class="list-group-item">
-            <div class="thumb">
-              <h4>Lembretes Automáticos</h4>
-              <div class="right-arrow"></div>
-            </div>
-          </li>
-          <li id="payment" class="list-group-item">
-            <div class="thumb">
-              <h4>Facilidade de Pagamento</h4>
-              <div class="right-arrow"></div>
-            </div>
-          </li>
-        </ul>
-      </section>
-      <section id="parlours" class="col-xs-12">
-        <div class="wrapper">
-          <h1>Temos os seus favoritos.</h1>
-          <form class="form-horizontal col-xs-offset-4 col-xs-4" action="index_submit" method="get" accept-charset="utf-8">
-            <label for="parlour"></label>
-            <input class="form-control" type="text" name="parlour" value="" placeholder="Salão">
-            <label for="city"></label>
-            <input class="form-control" type="text" name="city" value=""  placeholder="Cidade">
-            <ul class="scroll-group">
-              <div class="scroll-group-heading">9999 salões encontrados</div>
-              <li class="scroll-group-item">
-                <img src="img/parlour_thumb.png">
-                <div>
-                  <p>Salão Toniolo p/ Carecas</p>
-                  <small>Rua dos Bobos 0 - Itaim Bibi</small>
-                  <div class="rating">
-                    <div class="full"></div>
-                    <div class="full"></div>
-                    <div class="full"></div>
-                    <div></div>
-                    <div></div>
-                  </div>
+      <section class="dark">
+        <div class="container">
+          <h1 class="light text-center">Temos os seus favoritos.</h1>
+          <form class="form-horizontal col-xs-12 col-sm-offset-4 col-sm-4" action="index_submit" method="get" accept-charset="utf-8">
+            <div class="form-group dark">
+              <div class="input-group">
+                <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-search"></span>
                 </div>
-              </li>
-              <li class="scroll-group-item">
-                <img src="img/parlour_thumb.png">
-                <div>
-                  <p>Salão Toniolo p/ Carecas</p>
-                  <small>Rua dos Bobos 0 - Itaim Bibi</small>
-                  <div class="rating">
-                    <div class="full"></div>
-                    <div class="full"></div>
-                    <div class="full"></div>
-                    <div></div>
-                    <div></div>
-                  </div>
+                <input type="text" class="form-control" name="parlour" value="" placeholder="Salão"/>
+              </div>
+            </div>
+            <div class="form-group dark">
+              <div class="input-group">
+                <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-map-marker"></span>
                 </div>
-              </li>
-            </ul>
+                <input type="text" class="form-control" name="city" value="" placeholder="Cidade"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <ul class="scroll-group">
+                <div class="scroll-group-heading">9999 salões encontrados</div>
+                <li class="scroll-group-item">
+                  <img src="img/parlour_thumb.png">
+                  <div>
+                    <p>Salão Toniolo p/ Carecas</p>
+                    <small>Rua dos Bobos 0 - Itaim Bibi</small>
+                    <div class="rating">
+                      <div class="full"></div>
+                      <div class="full"></div>
+                      <div class="full"></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="scroll-group-item">
+                  <img src="img/parlour_thumb.png">
+                  <div>
+                    <p>Salão Toniolo p/ Carecas</p>
+                    <small>Rua dos Bobos 0 - Itaim Bibi</small>
+                    <div class="rating">
+                      <div class="full"></div>
+                      <div class="full"></div>
+                      <div class="full"></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </form>
         </div>
       </section>
-      <section id="invite" class="col-xs-12">
-        <h1>Quer seu salão no Ublz?</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <a class="btn btn-primary" href="" title="">Faça Parte</a>
+      <section class="ghastly">
+        <div class="container">
+          <div class="row">
+            <h1 class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6 text-center">Quer seu salão no Ublz?</h1>
+          </div>
+          <div class="row">
+            <p class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div class="row">
+            <a class="btn btn-primary col-xs-offset-2 col-xs-8 col-sm-offset-4 col-sm-4" href="" title="">FAÇA PARTE</a>
+          </div>
+        </div>
       </section>
     </main>
-    <footer class="row">
+    <footer>
       <div class="logo small"></div>
-      <a class="btn btn-appstore" href=""></a>
+      <a class="btn btn-appstore small" href=""></a>
     </footer>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
