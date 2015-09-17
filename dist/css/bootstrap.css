@@ -5684,7 +5684,7 @@ button.scroll-group-item {
 }
 .feature-group:not(.vertical) .feature-group-item .bar-row {
   position: absolute;
-  width: 200%;
+  width: 500%;
   height: 100%;
   padding: 5% 0;
 }
@@ -5692,13 +5692,13 @@ button.scroll-group-item {
   float: right;
 }
 .feature-group:not(.vertical) .feature-group-item:nth-child(odd) .bar-row {
-  left: -180%;
+  left: -480%;
 }
 .feature-group:not(.vertical) .feature-group-item:nth-child(even):not(.bar-row) > img {
   float: left;
 }
 .feature-group:not(.vertical) .feature-group-item:nth-child(even):not(.bar-row) .bar-row {
-  left: 80%;
+  left: 20%;
 }
 .feature-group:not(.vertical) .feature-group-item .bar {
   display: block;
@@ -5813,6 +5813,9 @@ button.feature-group-item:focus {
 button.feature-group-item {
   width: 100%;
   text-align: left;
+}
+.feature-group-item .feature-group-thumb {
+  cursor: pointer;
 }
 .feature-group-item.disabled,
 .feature-group-item.disabled:hover,
@@ -6297,14 +6300,14 @@ button.close {
 .divider > div {
   display: block;
   width: 50%;
-  height: 24px;
+  height: 23px;
   box-sizing: border-box;
   background-color: white;
   background-clip: content-box;
 }
 .divider > div:first-child {
   float: left;
-  padding-right: 24px;
+  padding-right: 23px;
 }
 .divider > div:first-child .triangle {
   float: right;
@@ -6313,11 +6316,11 @@ button.close {
   border-style: solid;
   border-width: 24px 0 0 24px;
   border-color: transparent transparent transparent #ffffff;
-  margin-right: -24px;
+  margin-right: -23px;
 }
 .divider > div:last-child {
   float: right;
-  padding-left: 24px;
+  padding-left: 23px;
 }
 .divider > div:last-child .triangle {
   float: left;
@@ -6326,7 +6329,7 @@ button.close {
   border-style: solid;
   border-width: 0 0 24px 24px;
   border-color: transparent transparent #ffffff transparent;
-  margin-left: -24px;
+  margin-left: -23px;
 }
 .modal-open {
   overflow: hidden;
@@ -6342,6 +6345,12 @@ button.close {
   z-index: 1050;
   -webkit-overflow-scrolling: touch;
   outline: 0;
+}
+.modal .modal:before {
+  display: inline-block;
+  vertical-align: middle;
+  content: " ";
+  height: 100%;
 }
 .modal.fade .modal-dialog {
   -webkit-transform: translate(0, -25%);
@@ -6366,7 +6375,8 @@ button.close {
 .modal-dialog {
   position: relative;
   width: auto;
-  margin: 10px;
+  height: 80% !important;
+  padding-top: 10%;
 }
 .modal-content {
   position: relative;
@@ -6378,6 +6388,8 @@ button.close {
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   background-clip: padding-box;
   outline: 0;
+  height: 100% !important;
+  overflow: visible;
 }
 .modal-backdrop {
   position: fixed;
@@ -6397,20 +6409,37 @@ button.close {
   filter: alpha(opacity=50);
 }
 .modal-header {
+  position: relative;
+  z-index: 2;
   padding: 15px;
   border-bottom: 1px solid #e5e5e5;
   min-height: 16.42857143px;
+  background: #252525;
 }
 .modal-header .close {
   margin-top: -2px;
+  font-weight: 300;
+  color: white;
 }
 .modal-title {
   margin: 0;
   line-height: 1.42857143;
+  font-weight: 300;
+  color: white;
 }
 .modal-body {
   position: relative;
-  padding: 15px;
+  padding: 55px 0 0;
+  height: 100%;
+  overflow: auto;
+  top: -56px;
+}
+.modal-body p {
+  display: block;
+  float: left;
+  width: 60%;
+  padding: 32px 24px;
+  box-sizing: border-box;
 }
 .modal-footer {
   padding: 15px;
@@ -6426,6 +6455,14 @@ button.close {
 }
 .modal-footer .btn-block + .btn-block {
   margin-left: 0;
+}
+.modal-thumb {
+  width: 40%;
+  height: 100%;
+  float: right;
+  border-bottom-right-radius: 6px;
+  background-size: cover;
+  background-position: center;
 }
 .modal-scrollbar-measure {
   position: absolute;

@@ -568,6 +568,14 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
+@media (max-width: 767px) {
+  body {
+    background-image: url("../../img/bg_splash_portrait.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position: 58% 50%;
+  }
+}
 header {
   position: fixed;
   top: 0;
@@ -635,9 +643,30 @@ main section:last-child {
 }
 .splash {
   height: 95%;
-  padding-top: 128px;
+  padding-top: 68px;
 }
-.splash h1:first-child {
+.splash .container.visible-xs-block {
+  height: 80%;
+  margin-top: 50%;
+  padding-top: 20%;
+  padding-bottom: 16px;
+  background-image: -webkit-linear-gradient(rgba(25, 25, 25, 0), rgba(25, 25, 25, 0.6) 50%, rgba(25, 25, 25, 0.6));
+  background-image: -o-linear-gradient(rgba(25, 25, 25, 0), rgba(25, 25, 25, 0.6) 50%, rgba(25, 25, 25, 0.6));
+  background-image: linear-gradient(rgba(25, 25, 25, 0), rgba(25, 25, 25, 0.6) 50%, rgba(25, 25, 25, 0.6));
+  background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00191919', endColorstr='#99191919', GradientType=0);
+}
+.splash .container.visible-xs-block:before,
+.splash .container.visible-xs-block:after {
+  content: " ";
+  display: table;
+}
+.splash .container.visible-xs-block:after {
+  clear: both;
+}
+.splash h1:first-child,
+.splash h2:first-child {
+  margin-top: 60px;
   margin-bottom: 32px;
 }
 .dark.form-group .form-control,

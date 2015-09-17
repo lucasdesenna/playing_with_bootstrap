@@ -307,6 +307,13 @@ body {
   background-attachment: fixed;
 }
 
+@media (max-width: @screen-xs-max) {
+  body {
+    .get-image("bg_splash_portrait.png");
+    background-position: 58% 50%;
+  }
+}
+
 header {
   position: fixed;
   top: 0;
@@ -378,9 +385,19 @@ main {
 
 .splash {
   height: 95%;
-  padding-top: 128px;
+  padding-top: 68px;
 
-  h1:first-child {
+  .container.visible-xs-block {
+    height: 80%;
+    margin-top: 50%;
+    padding-top: 20%;
+    padding-bottom: 16px;
+    #gradient > .vertical-three-colors(rgba(25, 25, 25, 0); rgba(25, 25, 25, 0.6); @color-stop: 50%; rgba(25, 25, 25, 0.6));
+    .clearfix();
+  }
+
+  h1:first-child, h2:first-child {
+    margin-top: 60px;
     margin-bottom: 32px;
   }
 }

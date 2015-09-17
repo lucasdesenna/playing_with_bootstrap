@@ -28,6 +28,13 @@
   // https://github.com/twbs/bootstrap/pull/10951.
   outline: 0;
 
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+
   // When fading in the modal, animate it to slide down
   &.fade .modal-dialog {
     .translate(0, -25%);
@@ -44,7 +51,8 @@
 .modal-dialog {
   position: relative;
   width: auto;
-  margin: 10px;
+  height: 80% !important;
+  padding-top:10%;
 }
 
 // Actual modal
@@ -58,6 +66,8 @@
   background-clip: padding-box;
   // Remove focus outline from opened modal
   outline: 0;
+  height: 100% !important;
+  overflow:visible;
 }
 
 // Modal background
@@ -77,26 +87,44 @@
 // Modal header
 // Top section of the modal w/ title and dismiss
 .modal-header {
+  position: relative;
+  z-index: 2;
   padding: @modal-title-padding;
   border-bottom: 1px solid @modal-header-border-color;
   min-height: (@modal-title-padding + @modal-title-line-height);
+  background: #252525;
 }
 // Close icon
 .modal-header .close {
   margin-top: -2px;
+  font-weight: 300;
+  color: white;
 }
 
 // Title text within header
 .modal-title {
   margin: 0;
   line-height: @modal-title-line-height;
+  font-weight: 300;
+  color: white;
 }
 
 // Modal body
 // Where all modal content resides (sibling of .modal-header and .modal-footer)
 .modal-body {
   position: relative;
-  padding: @modal-inner-padding;
+  padding: 55px 0 0;
+  height: 100%;
+  overflow: auto;
+  top: -56px;
+
+  p {
+    display: block;
+    float: left;
+    width: 60%;
+    padding: 32px 24px;
+    box-sizing: border-box;
+  }
 }
 
 // Footer (for actions)
@@ -119,6 +147,15 @@
   .btn-block + .btn-block {
     margin-left: 0;
   }
+}
+
+.modal-thumb {
+  width: 40%;
+  height: 100%;
+  float: right;
+  border-bottom-right-radius: 6px;
+  background-size: cover;
+  background-position: center;
 }
 
 // Measure scrollbar width for padding body during modal show/hide
