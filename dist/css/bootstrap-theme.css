@@ -613,9 +613,13 @@ footer .btn-appstore {
 }
 main section {
   padding: 64px 0;
+  overflow-x: hidden;
 }
 main section h1:first-child {
   margin-bottom: 32px;
+}
+main section.light {
+  background: white;
 }
 main section.dark {
   background-repeat: repeat-x;

@@ -1,0 +1,232 @@
+//
+// List groups
+// --------------------------------------------------
+
+
+// Base class
+//
+// Easily usable on <ul>, <ol>, or <div>.
+
+.feature-group {
+  // No need to set list-style: none; since .feature-group-item is block level
+  font-size: 14px;
+  margin-bottom: 20px;
+  overflow-x: visible;
+  overflow-y: hidde;
+  list-style: none;
+
+  &:not(.vertical) {
+    // Individual list items
+    .feature-group-item {
+      margin-top: 16px;
+      margin-bottom: 16px;
+
+      img {
+        position: relative;
+        width: 100%;
+        border: 0;
+        outline: none;
+        .box-shadow(0 0 4px rgba(0,0,0,0.5));
+      }
+
+      .bar-row {
+        position: absolute;
+        width: 200%;
+        height: 100%;
+        padding: 5% 0;
+      }
+
+      &:nth-child(odd) {
+        & > img {
+          float: right;
+        }
+
+        .bar-row {
+          left: -180%;
+        }
+      }
+
+      &:nth-child(even):not(.bar-row) {
+        & > img {
+          float: left;
+        }
+
+        .bar-row {
+          left: 80%;
+        }
+      }
+
+      .bar {
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        &.blue {
+          background-color: #0ebaff;
+        }
+
+        &.grey {
+          background-color: #d6d6d6;
+        }
+
+        &.yellow {
+          background-color: #ffd72e;
+        }
+
+        &.red {
+          background-color: #e74d44;
+        }
+      }
+
+      .feature-group-thumb {
+        display: block;
+        position: relative;
+      }
+
+      .feature-group-item-heading {
+        position: absolute;
+        width: 100%;
+        padding: 8px 16px;
+        margin-top: -78px;
+        background: rgba(0, 0, 0, 0.8);
+
+        h4 {
+          font-weight: 300;
+          line-height: 1.2;
+          color: white;
+        }
+
+        .glyphicon {
+          float: right;
+          text-align: right;
+          color: white;
+          line-height: 0px;
+        }
+      }
+    }
+  }
+
+  &.vertical {
+    .feature-group-item {
+      width: 100%;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      .clearfix();
+      
+      .feature-group-thumb {
+        display: block;
+        float: right;
+        width: 40%;
+        height: 78px;
+        background-position: 100% 50%;
+        background-size: 100%;
+        background-repeat: no-repeat;
+      }
+
+      .feature-group-item-heading {
+        float: left;
+        width: 60%;
+        padding: 8px 8px 8px 16px;
+        background: #262626;
+
+        h4 {
+          font-weight: 300;
+          line-height: 1.2;
+          color: white;
+        }
+
+        .glyphicon {
+          float: right;
+          text-align: right;
+          color: white;
+          line-height: 0px;
+        }
+      }
+
+      .triangle {
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 78px 40px 0 0;
+        border-color: #262626 transparent transparent transparent;
+      }
+    }
+  }
+
+}
+
+//
+// Use on `li`s or `div`s within the `.feature-group` parent.
+
+
+// Interactive list items
+//
+// Use anchor or button elements instead of `li`s or `div`s to create interactive items.
+// Includes an extra `.active` modifier class for showing selected items.
+
+a.feature-group-item,
+button.feature-group-item {
+  color: @scroll-group-link-color;
+
+  .feature-group-item-heading {
+    color: @scroll-group-link-heading-color;
+  }
+
+  // Hover state
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: @scroll-group-link-hover-color;
+    background-color: @scroll-group-hover-bg;
+  }
+}
+
+button.feature-group-item {
+  width: 100%;
+  text-align: left;
+}
+
+.feature-group-item {
+  // Disabled state
+  &.disabled,
+  &.disabled:hover,
+  &.disabled:focus {
+    background-color: @scroll-group-disabled-bg;
+    color: @scroll-group-disabled-color;
+    cursor: @cursor-disabled;
+
+    // Force color to inherit for custom content
+    .feature-group-item-heading {
+      color: inherit;
+    }
+    .feature-group-item-text {
+      color: @scroll-group-disabled-text-color;
+    }
+  }
+
+  // Active class on item itself, not parent
+  &.active,
+  &.active:hover,
+  &.active:focus {
+    z-index: 2; // Place active items above their siblings for proper border styling
+    color: @scroll-group-active-color;
+    background-color: @scroll-group-active-bg;
+    border-color: @scroll-group-active-border;
+
+    // Force color to inherit for custom content
+    .feature-group-item-heading,
+    .feature-group-item-heading > small,
+    .feature-group-item-heading > .small {
+      color: inherit;
+    }
+    .feature-group-item-text {
+      color: @scroll-group-active-text-color;
+    }
+  }
+}
+
+.feature-group-item-text {
+  margin-bottom: 0;
+  line-height: 1.3;
+}

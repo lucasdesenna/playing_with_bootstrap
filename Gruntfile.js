@@ -332,15 +332,27 @@ module.exports = function (grunt) {
     jade: {
       options: {
         pretty: true,
-        data: getLessVarsData
+        files: {
+          "*": ["**/*.jade", "!layouts/*.jade"]
+        }
       },
-      customizerVars: {
-        src: 'docs/_jade/customizer-variables.jade',
-        dest: 'docs/_includes/customizer-variables.html'
+      debug: {
+        options: {
+          locals: {
+            livereload: true
+          }
+        }
       },
-      customizerNav: {
-        src: 'docs/_jade/customizer-nav.jade',
-        dest: 'docs/_includes/nav/customize.html'
+      publish: {
+        options: {
+          locals: {
+            livereload: false
+          },
+          files: {
+            "*": ["**/*.jade", "!some/*.jade", "!layouts/*.jade"]
+          },
+          pretty: false
+        }
       }
     },
 
