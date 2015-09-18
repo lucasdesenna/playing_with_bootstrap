@@ -9,6 +9,7 @@
 
 .scroll-group {
   // No need to set list-style: none; since .scroll-group-item is block level
+  height: 400px;
   font-size: 14px;
   margin-bottom: 20px;
   padding-left: 0; // reset padding because ul and ol
@@ -16,7 +17,7 @@
   .border-top-radius(@scroll-group-border-radius);
   .border-bottom-radius(@scroll-group-border-radius);
   background-color: @scroll-group-bg;
-  overflow-y: hidden;
+  overflow: hidden;
 
   .scroll-group-heading {
     display: block;
